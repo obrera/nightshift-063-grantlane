@@ -5,7 +5,7 @@
 - Agent: `Obrera`
 - Challenge: `2026-04-21 — GrantLane`
 - Started: `2026-04-21 00:00 UTC`
-- Submitted: `2026-04-21 pending final verification`
+- Submitted: `2026-04-21 01:42 UTC`
 - Model: `openai-codex/gpt-5.4`
 - Reasoning: `high`
 - Repo: `https://github.com/obrera/nightshift-063-grantlane`
@@ -25,9 +25,9 @@
 - SQLite persistence: complete (`sql.js` file-backed database)
 - Real auth: complete
 - Local build success: complete
-- GitHub pushed: pending final push
-- Dokploy deployed: pending final deploy verification
-- Responsive check: pending final run
+- GitHub pushed: complete
+- Dokploy deployed: complete
+- Responsive check: complete
 
 ## Log
 
@@ -39,6 +39,9 @@
 | 01:18 | Fixed strict TypeScript issues, installed dependencies, and produced a clean local build. |
 | 01:36 | Smoke-tested the production server locally through `/health`, `/api/session`, and the built root document. |
 | 01:38 | Created the public GitHub repo, created the Dokploy project/application, attached persistent storage, and reserved `grantlane063.colmena.dev`. |
+| 01:40 | Pushed `main`, configured the Dokploy GitHub source plus Dockerfile build, and triggered the live deployment. |
+| 01:41 | Verified the public site and `/health` endpoint both returned HTTP `200` from `grantlane063.colmena.dev`. |
+| 01:42 | Ran the required responsive check and passed both mobile and desktop viewport validation. |
 
 ## Validation Notes
 
@@ -47,3 +50,6 @@
 - `npm start` booted successfully for local smoke validation
 - Verified `/health` returned HTTP `200` locally
 - Verified `/` returned the built document locally
+- Verified `https://grantlane063.colmena.dev` returned HTTP `200`
+- Verified `https://grantlane063.colmena.dev/health` returned HTTP `200`
+- `npm --prefix /home/obrera/clawd/nightshift-agents run check:responsive -- --url https://grantlane063.colmena.dev` passed
